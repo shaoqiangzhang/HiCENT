@@ -78,3 +78,13 @@ The following parameters in the ```data_down_parser()``` function within ```Arg_
 
 The downsampled files will be saved in the same directory as the input files, with filenames formatted as ```chrN_[LR].npz```, where N is the chromosome number and [LR] represents the target low resolution.
 
+### Splitting Data into Train, Validation, and Test Sets
+
+To generate datasets for training, validation, and testing, use the following command: 
+
+```python Generate.py``` 
+
+Before running the script, ensure the default values in the ```data_divider_parser()``` function, located in ```Arg_Parser.py```, are updated to align with your requirements. 
+The resulting dataset files will be saved in ```$root_dir/data``` with names like ```hicent_<parameters>.npz```.
+
+
