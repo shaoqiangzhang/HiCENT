@@ -42,7 +42,8 @@ To convert raw Hi-C data into the .npz format for downstream processing, use the
 ```python Read_Data.py``` 
 
 *** Arguments: ***
-•	-c: Name of the cell line folder (e.g., GM12878). Default: GM12878. The folder should be located under $root_dir/raw.
+
+•	-c:  Name of the cell line folder (e.g., GM12878). Default: GM12878. The folder should be located under $root_dir/raw.
 
 •	-hr (optional): Target resolution for the processed data (e.g., 5kb, 10kb). Default: 10kb.
 
@@ -51,6 +52,7 @@ To convert raw Hi-C data into the .npz format for downstream processing, use the
 •	-n (optional): Normalization method, including options like KRnorm or VCnorm. Default: KRnorm.
 
 *** Output ***
+
 The processed data will be stored in the following directory structure:
 
 ```$root_dir/mat/<cell_line_name>```
