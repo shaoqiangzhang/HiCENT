@@ -78,7 +78,7 @@ The following parameters in the ```data_down_parser()``` function within ```Arg_
 
 The downsampled files will be saved in the same directory as the input files, with filenames formatted as ```chrN_[LR].npz```, where N is the chromosome number and [LR] represents the target low resolution.
 
-### Splitting Data into Train, Validation, and Test Sets
+### 4. Splitting Data into Train, Validation, and Test Sets
 
 To generate datasets for training, validation, and testing, use the following command: 
 
@@ -87,4 +87,11 @@ To generate datasets for training, validation, and testing, use the following co
 Before running the script, ensure the default values in the ```data_divider_parser()``` function, located in ```Arg_Parser.py```, are updated to align with your requirements. 
 The resulting dataset files will be saved in ```$root_dir/data``` with names like ```hicent_<parameters>.npz```.
 
+## Single-Cell Hi-C Data Preprocessing Workflow
 
+### 1.Preparing the data
+
+This project utilizes single-cell Hi-C data obtained from the schic-topic-model website. The datasets include samples from the following human cell lines: GM12878, H1Esc, HFF, IMR90, and HAP1.
+
+### ```python top100similar.py```
+This script processes single-cell Hi-C data by loading contact matrices from text files. It calculates the cosine similarity between these matrices, enabling the identification of the top 100 most similar cells for each cell based on their contact patterns. The output is saved as top_100_similar_cells_cosine.txt, which lists the most similar cells along with their similarity scores.
