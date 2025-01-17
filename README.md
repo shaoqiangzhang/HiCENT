@@ -41,7 +41,7 @@ To convert raw Hi-C data into the .npz format for downstream processing, use the
 
 ```python Read_Data.py``` 
 
-*** Arguments: ***
+ ***Arguments:***
 
 •	-c:  Name of the cell line folder (e.g., GM12878). Default: GM12878. The folder should be located under $root_dir/raw.
 
@@ -51,7 +51,7 @@ To convert raw Hi-C data into the .npz format for downstream processing, use the
 
 •	-n (optional): Normalization method, including options like KRnorm or VCnorm. Default: KRnorm.
 
-*** Output ***
+***Output***
 
 The processed data will be stored in the following directory structure:
 
@@ -59,5 +59,22 @@ The processed data will be stored in the following directory structure:
 
 Each output file will be named based on the chromosome and resolution, following this pattern:```chrN_[HR].npz```
 
-This format ensures compatibility with downstream tools and simplifies data management.
+The output format ensures compatibility with downstream tools and simplifies data management.
+
+### 3. Downsampling Data
+To perform data downsampling from high-resolution input, execute the following command:
+
+```python Downsample.py```
+
+The following parameters in the ```data_down_parser()``` function within ```Arg_Parser.py``` are appropriately configured under the  following 'Arguments':
+
+•		-c (Cell Line Name): Specifies the cell line to analyze (Default: GM12878).
+
+•		-hr (High-Resolution Files): Specifies the resolution of the high-resolution data (Default: 10kb).
+
+•		-lr (Low-Resolution Files): Specifies the target resolution for downsampled files (Default: 40kb).
+
+•		-r (Downsampling Ratio): Specifies the ratio for downsampling (Default: 16).
+
+The downsampled files will be saved in the same directory as the input files, with filenames formatted as ```chrN_[LR].npz```, where N is the chromosome number and [LR] represents the target low resolution.
 
