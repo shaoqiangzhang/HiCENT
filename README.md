@@ -35,3 +35,27 @@ Within the defined root directory, create a subdirectory named raw to store the 
 ***1.3 Download and Extract Hi-C Data***
 
 Download the required Hi-C datasets and extract them into the raw directory. Organize the extracted files into subdirectories named after the respective cell lines (e.g., GM12878, K562, CH12-LX). Each subdirectory should contain the contact matrices for various chromosomes and resolutions.
+
+### 2. Converting Data to .npz Format
+To convert raw Hi-C data into the .npz format for downstream processing, use the following command:
+
+```python Read_Data.py``` 
+
+*** Arguments: ***
+•	-c: Name of the cell line folder (e.g., GM12878). Default: GM12878. The folder should be located under $root_dir/raw.
+
+•	-hr (optional): Target resolution for the processed data (e.g., 5kb, 10kb). Default: 10kb.
+
+•	-q (optional): Mapping quality of the input data, such as MAPQGE30 or MAPQG0. Default: MAPQGE30.
+
+•	-n (optional): Normalization method, including options like KRnorm or VCnorm. Default: KRnorm.
+
+*** Output ***
+The processed data will be stored in the following directory structure:
+
+```$root_dir/mat/<cell_line_name>```
+
+Each output file will be named based on the chromosome and resolution, following this pattern:```chrN_[HR].npz```
+
+This format ensures compatibility with downstream tools and simplifies data management.
+
