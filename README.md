@@ -4,10 +4,15 @@ Enhancing sngle-cell and bulk Hi-C data by generative Transformer model
 
 ## Dependencies
 •	Python 3.6
+
 •	numpy: 1.19.5
+
 •	pandas: 1.1.5
+
 •	matplotlib: 3.3.4
+
 •	scikit-learn: 0.24.2
+
 •	torch: 1.10.0+cu111
 
 ## Bulk Hi-C Data Preprocessing Workflow
