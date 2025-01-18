@@ -2,7 +2,7 @@ import sys
 import time
 import multiprocessing
 import numpy as np
-from Utils.io import compactM, divide, pooling
+from util.io import compactM, divide, pooling
 from Arg_Parser import *
 
 

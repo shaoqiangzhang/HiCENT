@@ -2,7 +2,7 @@ import sys
 import time
 import multiprocessing
 import numpy as np
-from Utils.io import downsampling
+from util.io import downsampling
 from Arg_Parser import *
 
 
