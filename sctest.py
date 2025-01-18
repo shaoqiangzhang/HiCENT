@@ -3,7 +3,7 @@ import os
 import torch
 import numpy as np
 from torch.utils.data import DataLoader, TensorDataset
-from model import esrt0409_1 as esrt
+from model import HiCENT as hicent
 from util.SSIM import ssim
 from math import log10
 import utils
@@ -42,7 +42,7 @@ valid_set = TensorDataset(valid_tensor_data, valid_tensor_target, valid_inds)
 valid_loader = DataLoader(valid_set, batch_size=args.batch_size, shuffle=False)
 
 # Load model
-model = esrt.ESRT(upscale=args.scale)
+model = hicent.HICENT(upscale=args.scale)
 if args.resume:
     if os.path.isfile(args.resume):
         print(f"Loading model from '{args.resume}'")
