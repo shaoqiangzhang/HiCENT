@@ -17,7 +17,13 @@ Enhancing sngle-cell and bulk Hi-C data by generative Transformer model
 
 ## Bulk Hi-C Data Preprocessing
 
-This project utilizes Hi-C data from Rao et al., 2014 (GEO Accession: GSE63525). https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE63525 Specifically, the intrachromosomal contact matrices from GM12878, K562, and CH12-LX (mouse) cell lines are processed through the following stages:
+This project utilizes Hi-C data from Rao et al., 2014 (GEO Accession: [GSE63525] (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE63525)). https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE63525 
+We used [GM12878](https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE63525&format=file&file=GSE63525%5FGM12878%5Fprimary%5Fintrachromosomal%5Fcontact%5Fmatrices%2Etar%2Egz)
+primary intrachromosomal, [K562](https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE63525&format=file&file=GSE63525%5FK562%5Fintrachromosomal%5Fcontact%5Fmatrices%2Etar%2Egz)
+intrachromasomal, and [CH12-LX](https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE63525&format=file&file=GSE63525%5FCH12%2DLX%5Fintrachromosomal%5Fcontact%5Fmatrices%2Etar%2Egz)
+(mouse) intrachromosomal contact matrices.
+
+The intrachromosomal contact matrices from GM12878, K562, and CH12-LX (mouse) cell lines are processed through the following stages:
 
 ### 1. Preparing the Data
 To prepare the Hi-C datasets for analysis, follow these steps:
