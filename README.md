@@ -125,3 +125,20 @@ To predict single-Hi-C data using the trained model, run the following command:
 
 This script is used to load a trained super-resolution model and perform testing on single-cell Hi-C data, generating super-resolution outputs and saving them as compressed .npz files.
 
+## Accessing Your Predicted Data
+
+To access the predicted HR matrices, use the following command in a python file: 
+
+```hic_matrix = np.load("path/to/file.npz, allow_pickle=True)['hic']```
+
+## Clustering Single-Cell Hi-C Data
+
+For clustering analysis of single-cell Hi-C data, the following two steps are required:
+
+1.	Run the script: ```python concat.py```
+   
+2.	Run the script: ```python clustering.py```
+   
+These scripts will help cluster the scHi-C data and generate the corresponding clustering results.
+
+
