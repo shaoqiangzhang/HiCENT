@@ -15,7 +15,7 @@ Enhancing sngle-cell and bulk Hi-C data by generative Transformer model
 
 •	torch: 1.10.0+cu111
 
-## Bulk Hi-C Data Preprocessing Workflow
+## Bulk Hi-C Data Preprocessing
 
 This project utilizes Hi-C data from Rao et al., 2014 (GEO Accession: GSE63525). https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE63525 Specifically, the intrachromosomal contact matrices from GM12878, K562, and CH12-LX (mouse) cell lines are processed through the following stages:
 
@@ -87,7 +87,7 @@ To generate datasets for training, validation, and testing, use the following co
 Before running the script, ensure the default values in the ```data_divider_parser()``` function, located in ```Arg_Parser.py```, are updated to align with your requirements. 
 The resulting dataset files will be saved in ```$root_dir/data``` with names like ```hicent_<parameters>.npz```.
 
-## Single-Cell Hi-C Data Preprocessing Workflow
+## Single-Cell Hi-C Data Preprocessing
 
 ### Preparing the data
 
@@ -102,4 +102,26 @@ The script is used to generate a pseudo-bulk dataset from single-cell Hi-C data 
 ### ```python data_process.py```
 Load single-cell and pseudo-bulk contact matrices from the specified directory, perform data preprocessing, split the processed data into training, validation, and test sets, and save them as compressed .npz files.
 
+## Model Training
+
+To train the HiCENT model, run the following command:
+
+```python HiCENTtrain.py```
+
+To train with bulk Hi-C data or single-cell Hi-C data, simply modify the dataset accordingly.The function will output .pytorch checkpoint files containing the trained weights. During validation, if an epoch achieves the highest SSIM score or the highest PSNR score, the weights of that epoch will be saved as psnr{now_psnr}_ssim{now_ssim}_best.pytorch.
+Multiple psnr_ssim_best.pytorch checkpoint files will be generated during a single training session. Every 10 epochs, a checkpoint file named epoch_{epoch}.pth will be saved. After completing all epochs, a final finalg checkpoint file will be generated. We use the finalg checkpoint file for predictions.
+
+## Predicting
+
+To predict bulk Hi-C data using the trained model, run the following command:
+
+```python bulktest.py```
+
+This test script validates the HiCENT model, with results including SSIM, MSE, PSNR, GenomeDISCO, and other metrics. After model inference and validation, the generated prediction data is saved in .npz files to the specified directory.
+
+To predict single-Hi-C data using the trained model, run the following command:
+
+```python sctest.py```
+
+This script is used to load a trained super-resolution model and perform testing on single-cell Hi-C data, generating super-resolution outputs and saving them as compressed .npz files.
 
