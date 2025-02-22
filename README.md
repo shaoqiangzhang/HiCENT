@@ -108,7 +108,7 @@ To train the HiCENT model, run the following command:
 
 ```python HiCENTtrain.py```
 
-To train with bulk Hi-C data or single-cell Hi-C data, simply modify the dataset accordingly.The function will output .pytorch checkpoint files containing the trained weights. During validation, if an epoch achieves the highest SSIM score or the highest PSNR score, the weights of that epoch will be saved as psnr{now_psnr}_ssim{now_ssim}_best.pytorch.
+To train with bulk Hi-C data or single-cell Hi-C data, simply modify the dataset accordingly.The function will output .pytorch checkpoint files containing the trained weights. During validation, if an epoch achieves the highest SSIM score or the highest PSNR score, the weights of that epoch will be saved as psnr_ssim_best.pytorch.
 Multiple psnr_ssim_best.pytorch checkpoint files will be generated during a single training session. Every 10 epochs, a checkpoint file named epoch_{epoch}.pth will be saved. After completing all epochs, a final finalg checkpoint file will be generated. We use the finalg checkpoint file for predictions.
 
 ## Predicting
