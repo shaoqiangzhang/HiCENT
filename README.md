@@ -91,7 +91,7 @@ The resulting dataset files will be saved in ```$root_dir/data``` with names lik
 
 ### Preparing the data
 
-This project utilizes single-cell Hi-C data obtained from the schic-topic-model website. The datasets include samples from the following human cell lines: GM12878, H1Esc, HFF, IMR90, and HAP1.
+This project utilizes single-cell Hi-C data obtained from the schic-topic-model website （https://noble.gs.washington.edu/proj/schic-topic-model/ ）. The datasets include samples from the following human cell lines: GM12878, H1Esc, HFF, IMR90, and HAP1.
 
 ### ```python top100similar.py```
 This script processes single-cell Hi-C data by loading contact matrices from text files. It calculates the cosine similarity between these matrices, enabling the identification of the top 100 most similar cells for each cell based on their contact patterns. The output is saved as top_100_similar_cells_cosine.txt, which lists the most similar cells along with their similarity scores.
